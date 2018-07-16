@@ -1,4 +1,4 @@
-package VIST.demo;
+package com.viber_bot.car_sharing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

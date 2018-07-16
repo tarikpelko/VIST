@@ -1,4 +1,4 @@
-package VIST.demo;
+package com.viber_bot.car_sharing;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
