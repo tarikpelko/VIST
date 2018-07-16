@@ -3,6 +3,8 @@ package com.viber_bot.car_sharing.model;
 import javax.persistence.*;
 import java.sql.Time;
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Route")
@@ -26,6 +28,8 @@ public class Route {
 
     @Column(name = "avalibleseats")
     private int AvalibleSeats;
+
+    List<Reservation> reservations = new ArrayList<>();
 
     protected Route() {
     }

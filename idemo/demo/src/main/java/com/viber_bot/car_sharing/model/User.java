@@ -1,6 +1,8 @@
 package com.viber_bot.car_sharing.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "User")
@@ -19,6 +21,8 @@ public class User {
 
     @Column(name = "subscribed")
     private String Subscribed;
+
+    List<Reservation> reservations = new ArrayList<>();
 
     protected User() {
     }
