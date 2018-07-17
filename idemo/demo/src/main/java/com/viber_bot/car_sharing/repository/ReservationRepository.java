@@ -2,13 +2,13 @@ package com.viber_bot.car_sharing.repository;
 
 import com.viber_bot.car_sharing.model.Reservation;
 import com.viber_bot.car_sharing.model.Route;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Repository
-public interface ReservationRepository {
-    public String findAll();
-    public String findByID(int ID);
-    public void save(Reservation reservation);
-    public void delete(int ID);
-    public String findReservationByRoute(Route route);
+public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
+    public List<Reservation> findAll();
+
 }
