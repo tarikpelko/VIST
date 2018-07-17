@@ -29,7 +29,8 @@ public class Route {
     @Column(name = "avalibleseats")
     private int AvalibleSeats;
 
-    List<Reservation> reservations = new ArrayList<>();
+
+   // List<Reservation> reservations = new ArrayList<>();
 
     protected Route() {
     }

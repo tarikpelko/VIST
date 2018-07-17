@@ -1,13 +1,14 @@
 package com.viber_bot.car_sharing.model;
 
+import com.viber_bot.car_sharing.repository.UserRepository;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "User")
-
-public class User {
+@Table(name = "Users")
+public class User  {
     private static final long serialVersionUID = -3009157732242241606L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,8 +23,6 @@ public class User {
     @Column(name = "subscribed")
     private String Subscribed;
 
-    List<Reservation> reservations = new ArrayList<>();
-
     protected User() {
     }
 
@@ -31,6 +30,9 @@ public class User {
         this.Name = name;
         this.Subscribed = subscribed;
     }
+
+    public String getViberID(){return this.ViberID;}
+    public String getName(){return this.Name;}
 }
 
 
