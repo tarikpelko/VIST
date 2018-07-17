@@ -25,6 +25,4 @@ public class WebController {
         model.addAttribute("users", uList);
         return "users";
     }
-
-
 }

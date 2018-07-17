@@ -24,7 +24,7 @@ public class User  {
     private String Subscribed;
 
     @OneToMany(mappedBy = "user")
-    private List<Reservation> reservations;
+    private List<Reservation> reservations = new ArrayList<>();
 
     protected User() {
     }

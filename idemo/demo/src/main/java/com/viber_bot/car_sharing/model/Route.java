@@ -30,10 +30,8 @@ public class Route {
     private int AvalibleSeats;
 
     @OneToMany(mappedBy = "route")
-    private List<Reservation> reservations;
+    private List<Reservation> reservations = new ArrayList<>();
 
-
-   // List<Reservation> reservations = new ArrayList<>();
 
     protected Route() {
     }
