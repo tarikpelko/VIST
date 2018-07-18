@@ -28,8 +28,6 @@ public class User  {
     @OneToMany(mappedBy = "user")
     private List<Reservation> reservations = new ArrayList<>();
 
-
-
     public User(String name, String subscribed) {
         this.name = name;
         this.subscribed = subscribed;

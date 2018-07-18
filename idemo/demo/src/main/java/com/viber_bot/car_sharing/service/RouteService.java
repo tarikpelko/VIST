@@ -18,4 +18,11 @@ public class RouteService {
     public void save(Route route) {
         routeRepository.save(route);
     }
+
+
+    public Route findById(long id){
+        return routeRepository.findById(id);
+    }
+/*
+    public void deleteById(long id){ routeRepository.deleteById(id);}*/
 }
