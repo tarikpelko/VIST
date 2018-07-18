@@ -10,26 +10,22 @@ import java.util.Collection;
 @Entity
 @Table(name = "Reservation")
 public class Reservation implements Serializable {
-    private static final long serialVersionUID = -3009157732242241606L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Reservation_id;
+    private long reservationID;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="userID")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name="route_id")
+    @JoinColumn(name="routeID")
     private Route route;
 
     @Column(name = "reservedseats")
-    private int ReserveadSeats;
-
-    protected Reservation() {
-    }
+    private int reserveadSeats;
 
     public Reservation(int reservedseats) {
-        this.ReserveadSeats = reservedseats;
+        this.reserveadSeats = reservedseats;
     }
 }

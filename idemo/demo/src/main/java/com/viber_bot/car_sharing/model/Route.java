@@ -12,22 +12,22 @@ public class Route {
     private static final long serialVersionUID = -3009157732242241606L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Route_id;
+    private long routeID;
 
     @Column(name="start")
-    private String Start;
+    private String start;
 
     @Column(name = "destination")
-    private String Destination;
+    private String destination;
 
     @Column(name = "date")
-    private DateFormat Date;
+    private DateFormat date;
 
     @Column(name = "time")
-    private Time Time;
+    private Time time;
 
     @Column(name = "avalibleseats")
-    private int AvalibleSeats;
+    private int avalibleSeats;
 
     @OneToMany(mappedBy = "route")
     private List<Reservation> reservations = new ArrayList<>();
@@ -37,10 +37,10 @@ public class Route {
     }
 
     public Route(String start, String destination, DateFormat date, java.sql.Time time, int avalibleSeats) {
-        this.Start = start;
-        this.Destination = destination;
-        this.Date = date;
-        this.Time = time;
-        this.AvalibleSeats = avalibleSeats;
+        this.start = start;
+        this.destination = destination;
+        this.date = date;
+        this.time = time;
+        this.avalibleSeats = avalibleSeats;
     }
 }

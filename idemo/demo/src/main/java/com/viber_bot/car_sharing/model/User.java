@@ -9,33 +9,32 @@ import java.util.List;
 @Entity
 @Table(name = "Users")
 public class User  {
-    private static final long serialVersionUID = -3009157732242241606L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long User_id;
+    private int userID;
 
     @Column(name = "viberID")
-    private String ViberID;
+    private String viberID;
 
     @Column(name = "name")
-    private String Name;
+    private String name;
 
     @Column(name = "subscribed")
-    private String Subscribed;
+    private String subscribed;
 
     @OneToMany(mappedBy = "user")
     private List<Reservation> reservations = new ArrayList<>();
 
-    protected User() {
-    }
+
 
     public User(String name, String subscribed) {
-        this.Name = name;
-        this.Subscribed = subscribed;
+        this.name = name;
+        this.subscribed = subscribed;
     }
 
-    public String getViberID(){return this.ViberID;}
-    public String getName(){return this.Name;}
+    public String getViberID(){return this.viberID;}
+    public String getName(){return this.name;}
 }
 
 
