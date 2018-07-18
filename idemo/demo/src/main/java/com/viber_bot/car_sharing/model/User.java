@@ -12,7 +12,7 @@ public class User  {
     private static final long serialVersionUID = -3009157732242241606L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long User_id;
 
     @Column(name = "viberID")
     private String ViberID;
@@ -22,6 +22,9 @@ public class User  {
 
     @Column(name = "subscribed")
     private String Subscribed;
+
+    @OneToMany(mappedBy = "user")
+    private List<Reservation> reservations;
 
     protected User() {
     }

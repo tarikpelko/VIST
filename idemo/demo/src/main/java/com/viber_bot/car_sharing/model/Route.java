@@ -12,7 +12,7 @@ public class Route {
     private static final long serialVersionUID = -3009157732242241606L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long Route_id;
 
     @Column(name="start")
     private String Start;
@@ -28,6 +28,9 @@ public class Route {
 
     @Column(name = "avalibleseats")
     private int AvalibleSeats;
+
+    @OneToMany(mappedBy = "route")
+    private List<Reservation> reservations;
 
 
    // List<Reservation> reservations = new ArrayList<>();
