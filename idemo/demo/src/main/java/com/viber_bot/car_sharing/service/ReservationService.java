@@ -21,4 +21,8 @@ public class ReservationService {
     //public void save(Reservation reservation){}
     //public void delete(int id){}
     //public List<Reservation> findReservationByRoute(Route route){}
+
+    public void save(Reservation reservations) {
+        reservationRepository.save(reservations);
+    }
 }

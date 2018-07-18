@@ -37,8 +37,6 @@ public class Route {
     protected Route() {
     }
 
-
-
     public Route(String start, String destination, DateFormat date, java.sql.Time time, int avalibleSeats) {
         this.start = start;
         this.destination = destination;

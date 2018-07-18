@@ -1,6 +1,7 @@
 package com.viber_bot.car_sharing.controller;
 
 import com.viber_bot.car_sharing.model.Reservation;
+import com.viber_bot.car_sharing.model.Route;
 import com.viber_bot.car_sharing.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +17,14 @@ import java.util.List;
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
-    @RequestMapping(value = "/Reservation", method = RequestMethod.GET)
-    public String GetAllReservation(Model model) {
+    @RequestMapping(value = "/reservations", method = RequestMethod.GET)
+    public String getAllReservation(Model model) {
         List<Reservation> resList = new ArrayList<>();
+        //reservationService.save(new Reservation(1, 2, null, 2));
         resList = reservationService.findAll();
-        model.addAttribute("Reservation",resList);
-        return "Reservation";
+        model.addAttribute("reservations",resList);
+        return "Reservations";
     }
 
 }
+

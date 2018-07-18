@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Routes</title>
+    <title>Reservations</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -12,26 +12,22 @@
 <body>
 
 <div class="container">
-    <h2>Routes</h2>
+    <h2>Reservations</h2>
     <table class="table">
         <thead>
         <tr>
-            <th>RouteID</th>
-            <th>Start</th>
-            <th>Destination</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Avaliable Seats</th>
+            <th>Reservation id</th>
+            <th>User id</th>
+            <th>Route id</th>
+            <th>Reservead seats</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="route:${routes}">
-            <td th:text="${route.id}"></td>
-            <td th:text="${route.start}"></td>
-            <td th:text="${route.destination}"></td>
-            <td th:text="${route.date}"></td>
-            <td th:text="${route.time}"></td>
-            <td th:text="${route.avaliableSeats}"></td>
+        <tr th:each="reservation:${reservations}">
+            <td th:text="${reservation.id}"></td>
+            <td th:text="${reservation.user}"></td>
+            <td th:text="${reservation.route}"></td>
+            <td th:text="${reservation.reserveadSeats}"></td>
         </tr>
         </tbody>
     </table>
