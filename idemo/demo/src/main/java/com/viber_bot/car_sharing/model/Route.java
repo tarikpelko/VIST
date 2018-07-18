@@ -1,6 +1,7 @@
 package com.viber_bot.car_sharing.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Time;
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class Route {
     private static final long serialVersionUID = -3009157732242241606L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long routeID;
+    private long id;
 
     @Column(name="start")
     private String start;
@@ -27,7 +28,7 @@ public class Route {
     private Time time;
 
     @Column(name = "avalibleseats")
-    private int avalibleSeats;
+    private int avaliableSeats;
 
     @OneToMany(mappedBy = "route")
     private List<Reservation> reservations = new ArrayList<>();
@@ -36,11 +37,70 @@ public class Route {
     protected Route() {
     }
 
+
+
     public Route(String start, String destination, DateFormat date, java.sql.Time time, int avalibleSeats) {
         this.start = start;
         this.destination = destination;
         this.date = date;
         this.time = time;
-        this.avalibleSeats = avalibleSeats;
+        this.avaliableSeats = avalibleSeats;
+
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public DateFormat getDate() {
+        return date;
+    }
+
+    public void setDate(DateFormat date) {
+        this.date = date;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public int getAvaliableSeats() {
+        return avaliableSeats;
+    }
+
+    public void setAvaliableSeats(int avaliableSeats) {
+        this.avaliableSeats = avaliableSeats;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }

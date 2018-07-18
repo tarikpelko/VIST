@@ -3,6 +3,7 @@ package com.viber_bot.car_sharing.model;
 import com.viber_bot.car_sharing.repository.UserRepository;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public class User  {
 
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userID;
 

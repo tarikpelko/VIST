@@ -17,4 +17,8 @@ public class ReservationService {
     public List<Reservation> findAll() {
         return reservationRepository.findAll();
     }
+    //public List<Reservation> findById(int id){}
+    //public void save(Reservation reservation){}
+    //public void delete(int id){}
+    //public List<Reservation> findReservationByRoute(Route route){}
 }

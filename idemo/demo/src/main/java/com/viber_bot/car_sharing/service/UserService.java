@@ -16,4 +16,10 @@ public class UserService  {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public String find(String viberId){return viberId;}
+
+    public void add(User user){}
+
+
 }
