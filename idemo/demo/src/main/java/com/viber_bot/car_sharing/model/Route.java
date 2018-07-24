@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "Route")
 public class Route {
-    private static final long serialVersionUID = -3009157732242241606L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -28,7 +28,7 @@ public class Route {
     private Time time;
 
     @Column(name = "avalibleseats")
-    private int avaliableSeats;
+    private int avalibleseats;
 
     @OneToMany(mappedBy = "route")
     private List<Reservation> reservations = new ArrayList<>();
@@ -37,12 +37,12 @@ public class Route {
     protected Route() {
     }
 
-    public Route(String start, String destination, DateFormat date, java.sql.Time time, int avalibleSeats) {
+    public Route(String start, String destination, DateFormat date, java.sql.Time time, int avalibleseats) {
         this.start = start;
         this.destination = destination;
         this.date = date;
         this.time = time;
-        this.avaliableSeats = avalibleSeats;
+        this.avalibleseats = avalibleseats;
 
     }
 
@@ -87,11 +87,11 @@ public class Route {
     }
 
     public int getAvaliableSeats() {
-        return avaliableSeats;
+        return avalibleseats;
     }
 
     public void setAvaliableSeats(int avaliableSeats) {
-        this.avaliableSeats = avaliableSeats;
+        this.avalibleseats = avaliableSeats;
     }
 
     public List<Reservation> getReservations() {
